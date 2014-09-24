@@ -1,5 +1,5 @@
 /**
- * jQuery FocusPoint; version: 1.0.3b
+ * jQuery FocusPoint; version: 1.1.1
  * Author: http://jonathonmenz.com
  * Source: https://github.com/jonom/jquery-focuspoint
  * Copyright (c) 2014 J. Menz; MIT License
@@ -12,13 +12,6 @@
 		reCalcOnWindowResize: true,
 		throttleDuration: 17 //ms - set to 0 to disable throttling
 	};
-
-	//Fallback css classes
-	var focusCssClasses = [
-		'focus-left-top', 'focus-left-center', 'focus-left-bottom',
-		'focus-center-top', 'focus-center-center', 'focus-center-bottom',
-		'focus-right-top', 'focus-right-center', 'focus-right-bottom'
-	];
 
 	//Setup a container instance
 	var setupContainer = function($el) {
@@ -100,13 +93,13 @@
 		var hShift = 0;
 		var vShift = 0;
 
-		//Which is over by more?
-		var wR = imageW / containerW;
-		var hR = imageH / containerH;
-
 		if (!(containerW > 0 && containerH > 0 && imageW > 0 && imageH > 0)) {
 			return false; //Need dimensions to proceed
 		}
+
+		//Which is over by more?
+		var wR = imageW / containerW;
+		var hR = imageH / containerH;
 
 		//Reset max-width and -height
 		$image.css({
@@ -139,7 +132,6 @@
 			: function(){adjustFocus($el);};//Only throttle when desired
 		var isListening = false;
 
-		$el.removeClass(focusCssClasses.join(' ')); //Replace basic css positioning with more accurate version
 		adjustFocus($el); //Focus image in container
 
 		//Expose a public API

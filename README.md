@@ -86,7 +86,7 @@ FocusPoint comes with a few options you can change to suit your needs.
 | `reCalcOnWindowResize` | `true` or `false`     | `true`  | Whether or not to re-adjust image when the window is resized |
 | `throttleDuration`     | Int e.g. `0` or `100` | `17`    | Throttling rate in milliseconds. Set to `0` to disable throttling. |
 
-Example useage:
+Example usage:
 
 ```javascript
 $('.focuspoint').focusPoint({
@@ -136,6 +136,8 @@ If FocusPoint helped you impress a client and you want to say thanks, you're wel
 
 ## Changelog
 
+#### v1.1.1 2014-09-23
+Minor fixes
 #### v1.1.0 2014-09-18
 Refactored code (thanks @xat)  
 Added ability to start/stop window-resize listener (thanks @xat)  
